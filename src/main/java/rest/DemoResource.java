@@ -2,6 +2,7 @@ package rest;
 
 import com.google.gson.Gson;
 import entities.User;
+import facades.SwappiApi;
 import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.persistence.EntityManager;
@@ -66,5 +67,51 @@ public class DemoResource {
     public String getFromAdmin() {
         String thisuser = securityContext.getUserPrincipal().getName();
         return "{\"msg\": \"Hello to (admin) User: " + thisuser + "\"}";
+    }
+
+    //SWAPPI-API
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("people")
+    public String getFromPeople() {
+        SwappiApi sa = new SwappiApi();
+        String thisuser = securityContext.getUserPrincipal().getName();
+        return "{\"msg\": \"Works" + thisuser + "\"}";
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("planets")
+    public String getFromPlanets() {
+        SwappiApi sa = new SwappiApi();
+        String thisuser = securityContext.getUserPrincipal().getName();
+        return "{\"msg\": \"Works" + thisuser + "\"}";
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("spaceships")
+    public String getFromSpaceships() {
+        SwappiApi sa = new SwappiApi();
+        String thisuser = securityContext.getUserPrincipal().getName();
+        return "{\"msg\": \"Works" + thisuser + "\"}";
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("vehicles")
+    public String getFromVehicles() {
+        SwappiApi sa = new SwappiApi();
+        String thisuser = securityContext.getUserPrincipal().getName();
+        return "{\"msg\": \"Works" + thisuser + "\"}";
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("films")
+    public String getFromFilms() {
+        SwappiApi sa = new SwappiApi();
+        String thisuser = securityContext.getUserPrincipal().getName();
+        return "{\"msg\": \"Works" + thisuser + "\"}";
     }
 }
