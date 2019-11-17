@@ -1,16 +1,10 @@
 [![Build Status](https://travis-ci.com/Steingrimurjonsson/CA3G3.svg?branch=master)](https://travis-ci.com/Steingrimurjonsson/CA3G3)
-*This project is meant as start code for projects and exercises given in Flow-1+2 at http://cphbusiness.dk in the Study Program "AP degree in Computer Science"*
 
-*Projects which are expected to use this start-code are projects that require all, or most of the following technologies:*
- - *JPA and REST*
-- *Testing, including database test*
-- *Testing, including tests of REST-API's*
-- *CI and CONTINUOUS DELIVERY*
+### CA3 - Group 3
+- This is our backend of the CA3 project
+- Here is our API endpoints.  Use Postman
 
-### Preconditions
-*In order to use this code, you should have a local developer setup + a "matching" droplet on Digital Ocean as described in the 3. semester guidelines* 
-# Getting Started
+- POST ruffsacks.com/CA3G3/info/login (here you need to send username and password in json format. If the input is right, you will get a token that you can use to access GET ruffsacks.com/CA3G3/info/user or ruffsacks.com/CA3G3/info/admin)
+- GET ruffsacks.com/CA3G3/info/all This shows you how many users that are made on the database.
+- GET ruffsacks.com/CA3G3/info/planets/(ENTER ID) or people/ , vehicles/, films/, starships/ This will give you json data about the selected topic from swapi.com
 
-This project contains two major documentation files: 
- - [First time users - getting started](README_proof_of_concept.md)
- - [How to use for future projects](README_how_to_use.md)
