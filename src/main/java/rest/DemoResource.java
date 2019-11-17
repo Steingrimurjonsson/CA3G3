@@ -12,6 +12,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
 import utils.EMF_Creator;
@@ -70,48 +71,49 @@ public class DemoResource {
     }
 
     //SWAPPI-API
+    @Path("people/{id}")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("people")
-    public String getFromPeople() {
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getPeopleById(String id) {
         SwappiApi sa = new SwappiApi();
-        String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Works" + thisuser + "\"}";
+        String url = "https://swapi.co/api/people" + id;
+        return sa.fetch(url);
     }
 
+    @Path("planets/{id}")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("planets")
-    public String getFromPlanets() {
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getPlanetsById(String id) {
         SwappiApi sa = new SwappiApi();
-        String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Works" + thisuser + "\"}";
+        String url = "https://swapi.co/api/planets" + id;
+        return sa.fetch(url);
     }
 
+    @Path("starships/{id}")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("spaceships")
-    public String getFromSpaceships() {
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getStarshipsById(String id) {
         SwappiApi sa = new SwappiApi();
-        String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Works" + thisuser + "\"}";
+        String url = "https://swapi.co/api/starships" + id;
+        return sa.fetch(url);
     }
 
+    @Path("vehicles/{id}")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("vehicles")
-    public String getFromVehicles() {
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getVehiclesById(String id) {
         SwappiApi sa = new SwappiApi();
-        String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Works" + thisuser + "\"}";
+        String url = "https://swapi.co/api/vehicles" + id;
+        return sa.fetch(url);
     }
 
+    @Path("films/{id}")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("films")
-    public String getFromFilms() {
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getFilmsById(String id) {
         SwappiApi sa = new SwappiApi();
-        String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Works" + thisuser + "\"}";
+        String url = "https://swapi.co/api/films" + id;
+        return sa.fetch(url);
     }
+
 }
