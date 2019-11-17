@@ -8,3 +8,4 @@
 - GET ruffsacks.com/CA3G3/info/all This shows you how many users that are made on the database.
 - GET ruffsacks.com/CA3G3/info/planets/(ENTER ID) or people/ , vehicles/, films/, starships/ This will give you json data about the selected topic from swapi.com
 
+-Link to the frontend of the CA3 https://github.com/Steingrimurjonsson/CA3G3F
